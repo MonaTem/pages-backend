@@ -1,13 +1,12 @@
 const {Page} = require('./../model/page.js');
-const mongoose = require('mongoose');
 
-const EMPTY_FUNCTION = () => {};
 
 /**
  * Saves data.
- * @returns {!Promise}
+ * @param {!Object} data
+ * @return {!Promise}
  */
-const save = (data, onError, onSuccess) => {
+const save = (data) => {
   if (!data) {
     return;
   }
@@ -17,7 +16,7 @@ const save = (data, onError, onSuccess) => {
 
 /**
  * Queries all pages.
- * @returns {!Promise}
+ * @return {!Promise}
  */
 const findAll = () => {
   return Page.find().exec();

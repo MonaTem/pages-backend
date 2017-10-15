@@ -1,7 +1,7 @@
 const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
 const cors = require('kcors');
-const koa = require('koa');
+const Koa = require('koa');
 const mongoose = require('mongoose');
 const router = new Router();
 const {save, findAll} = require('./dao/pageDao.js');
@@ -10,9 +10,8 @@ const {save, findAll} = require('./dao/pageDao.js');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/pages', {useMongoClient: true});
 
-const app = new koa();
+const app = new Koa();
 app.use(bodyParser());
-
 
 router
     .get('/', async (ctx) => {
@@ -23,7 +22,7 @@ router
     })
     .post('/page/save', async (ctx) => {
       try {
-        ctx.body = await save(ctx.request.body.data)
+        ctx.body = await save(ctx.request.body.data);
       } catch (err) {
         console.log(`Save Error: ${err}`);
         ctx.body = `error: ${err}`;
@@ -31,7 +30,7 @@ router
     })
     .get('/page/search', async (ctx) => {
       try {
-        ctx.body = await findAll()
+        ctx.body = await findAll();
       } catch (err) {
         console.log(`Search Error: ${err}`);
         ctx.body = `error: ${err}`;
@@ -44,4 +43,4 @@ app
     .use(router.allowedMethods());
 
 app.listen(3000);
-console.log("listening on 3000");
+console.log('listening on 3000');

@@ -7,6 +7,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "gulp-eslint": "^4.0.0",
     "kcors": "^2.2.1",
     "koa": "2.3.0",
     "koa-bodyparser": "^4.2.0",
@@ -22,6 +23,8 @@
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "eslint": "^4.9.0",
+    "eslint-config-google": "^0.9.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-uglify": "^3.0.0",
