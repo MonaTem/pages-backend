@@ -10,5 +10,4 @@ const pageSchema = mongoose.Schema({
 
 const Page = mongoose.model('Page', pageSchema);
 
-exports.pageSchema = pageSchema;
 exports.Page = Page;

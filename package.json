@@ -11,8 +11,16 @@
     "kcors": "^2.2.1",
     "koa": "2.3.0",
     "koa-bodyparser": "^4.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-csrf": "^3.0.6",
+    "koa-generic-session": "^2.0.0",
+    "koa-generic-session-mongo": "^0.4.0",
+    "koa-passport": "^4.0.1",
     "koa-router": "^7.2.1",
-    "mongoose": "4.12.2"
+    "koa-session": "^5.5.0",
+    "mongoose": "4.12.2",
+    "passport-google-auth": "^1.0.2",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
