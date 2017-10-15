@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const router = new Router();
 const {save, findAll} = require('./dao/pageDao.js');
 
+
 // MongoDB setup.
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/pages', {useMongoClient: true});
