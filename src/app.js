@@ -16,8 +16,8 @@ mongoose.connect('mongodb://localhost/pages', {useMongoClient: true});
 const app = new Koa();
 app.proxy = true;
 
-app.keys = ['secret']
-app.use(session({}, app))
+app.keys = ['secret'];
+app.use(session({}, app));
 
 app.use(passport.initialize());
 app.use(passport.session());
