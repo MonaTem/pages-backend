@@ -11,7 +11,6 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/pages', {useMongoClient: true});
 
 const app = new Koa();
-app.use(bodyParser());
 
 router
     .get('/', async (ctx) => {
@@ -38,6 +37,7 @@ router
     });
 
 app
+    .use(bodyParser())
     .use(cors())
     .use(router.routes())
     .use(router.allowedMethods());
