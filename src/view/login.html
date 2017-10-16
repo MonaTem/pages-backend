@@ -9,6 +9,7 @@
       Login
     </h1>
     <form action="/login" method="post">
+      <input type="hidden" name="_csrf" value="{csrfToken}"/>
       <p>
         <label>Username:
           <input type="text" name="username" value="admin" />

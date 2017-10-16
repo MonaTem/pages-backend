@@ -9,8 +9,9 @@ const router = new Router();
 router
     .get('/login', async (ctx) => {
       ctx.type = 'html';
-      ctx.body = fs.readFileSync(path.join(__dirname, './view/login.html'),
+      const body = fs.readFileSync(path.join(__dirname, './view/login.html'),
           'utf8');
+      ctx.body = body.replace('{csrfToken}', ctx.csrf);
     })
     .post('/login',
         passport.authenticate('local', {

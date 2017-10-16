@@ -1,3 +1,4 @@
+const CSRF = require('koa-csrf');
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const cors = require('kcors');
@@ -21,6 +22,12 @@ app
     .use(passport.initialize())
     .use(passport.session())
     .use(bodyParser())
+    .use(new CSRF({
+      invalidSessionSecretMessage: 'Invalid session secret',
+      invalidSessionSecretStatusCode: 403,
+      invalidTokenMessage: 'Invalid CSRF token',
+      invalidTokenStatusCode: 403,
+    }))
     .use(cors())
     .use(router.routes())
     .use(router.allowedMethods());
