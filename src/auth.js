@@ -37,3 +37,5 @@ passport.use(new GoogleStrategy({
     User.findOne({google_id: profile.id}, done);
   }
 ));
+
+module.exports = passport;
